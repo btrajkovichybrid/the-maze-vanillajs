@@ -1,20 +1,26 @@
 let levels = [];
 levels[0] = {
   map: [
-    [1, 1, 0, 0, 1, 1],
-    [1, 0, 0, 0, 0, 1],
-    [0, 0, 1, 1, 0, 0],
-    [0, 0, 0, 1, 1, 0],
-    [0, 1, 0, 1, 0, 0],
-    [0, 1, 0, 0, 1, 1],
+    [1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0],
+    [1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0],
+    [0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1],
+    [0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1],
+    [0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0],
+    [0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1],
+    [1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1],
+    [0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0],
+    [0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0],
+    [0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1],
   ],
   player: {
     x: 0,
-    y: 5,
+    y: 11,
   },
   goal: {
-    x: 4,
-    y: 1,
+    x: 11,
+    y: 0,
   },
   theme: "default",
 };
@@ -69,10 +75,9 @@ Game.prototype.placeSprite = function (type) {
   let y = this[type].y;
   let sprite = this.createEl(x, y, type);
   sprite.id = type;
-  sprite.style.borderRadius = this.tileDim + "px";
+  // sprite.style.borderRadius = this.tileDim + "px";
   let layer = this.el.querySelector("#sprites");
   layer.appendChild(sprite);
-  console.log("sprite", sprite);
   return sprite;
 };
 

@@ -1,8 +1,8 @@
-:root{
-    --player-color: red;
-    --goal-color: brown;
-    --floor-color:lightgrey;
-    --wall-color:skyblue;
+:root {
+  --player-color: red;
+  --goal-color: brown;
+  --floor-color: lightgrey;
+  --wall-color: #a7dbd8;
 }
 
 * {
@@ -32,6 +32,7 @@ body.success {
 #map-and-controls {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 p {
@@ -65,22 +66,20 @@ div.layer div {
 .goal {
   transform-origin: center;
   transform: scale(0.85);
+  border-left: 26px solid transparent;
+  border-right: 26px solid transparent;
 }
 
 .player {
-  background-color: #90ee90;
-  border: 1px solid green;
+  border-bottom: 52px solid #01befe;
 }
 
 .goal {
-  background-color: #ffd700;
-  border: 1px solid #98720b;
+  border-top: 52px solid #ff4f00;
 }
 
 /* animation for smooth movement */
 .player {
-  background-color: #90ee90;
-  border: 1px solid green;
   transition: left 0.2s linear, top 0.2s linear;
 }
 
