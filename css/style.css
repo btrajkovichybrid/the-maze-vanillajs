@@ -26,8 +26,9 @@ body {
 
 /* when body have success class add green background */
 body.success {
-  background-color: #b7f0b7;
+  /* background-color: #b7f0b7; */
   transition: 0.2s ease;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .game-container {
@@ -89,7 +90,7 @@ div.layer div {
 }
 
 /* success message */
-#success-msg {
+/* #success-msg {
   opacity: 0;
   transition: opacity 0.2s ease;
   position: absolute;
@@ -97,7 +98,7 @@ div.layer div {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   width: calc(100%-8px);
-}
+} */
 
 body.success #success-msg {
   opacity: 1;
@@ -125,6 +126,11 @@ body.wrong {
   top: 50%;
   left: 50%;
   transform: translate(-50%);
+  visibility: hidden;
+}
+
+#question{
+  margin: 10px auto 25px;
 }
 
 .btn-grid {
@@ -171,4 +177,8 @@ body.wrong {
 
 .hide {
   display: none;
+}
+
+.show{
+  visibility: visible;
 }

@@ -3,17 +3,24 @@ const nextButton = document.getElementById("next-btn");
 const questionContainerElement = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
+const quizContainer = document.getElementById("quiz-container");
 
 let shuffledQuestions, currentQuestionIndex;
 
-startButton.addEventListener("click", startGame);
+// startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
 });
 
-function startGame() {
-  startButton.classList.add("hide");
+export function startQuiz() {
+  quizContainer.classList.add("show");
+  startGame();
+}
+
+export function startGame() {
+  // startButton.classList.add("hide");
+  questionContainerElement.classList.remove("hide");
   shuffledQuestions = questions.sort(() => Math.random() - 0.5);
   currentQuestionIndex = 0;
   questionContainerElement.classList.remove("hide");
@@ -26,6 +33,7 @@ function setNextQuestion() {
 }
 
 function showQuestion(question) {
+  // debugger;
   questionElement.innerText = question.question;
   question.answers.forEach((answer) => {
     const button = document.createElement("button");
@@ -80,8 +88,8 @@ const questions = [
   {
     question: "java.util.Collection je:",
     answers: [
-      { text: "Class4", correct: false },
-      { text: "22", correct: true },
+      { text: "Class", correct: false },
+      { text: "Interface", correct: true },
     ],
   },
   {
@@ -116,8 +124,8 @@ const questions = [
   },
   {
     question: `Šta će ove dve komande ispisati? 
-    console.log(0.1 + 0.2);
-    console.log(0.1 + 0.2 == 0.3);`,
+        console.log(0.1 + 0.2);
+        console.log(0.1 + 0.2 == 0.3);`,
     answers: [
       {
         text: " 0.30000000000000004, false",
@@ -209,16 +217,13 @@ const questions = [
   {
     question: `Šta će biti ispisano na izlazu?
         var zero = 0;
-        try
-        {
-           Console.WriteLine(42 / 0.0);
-           Console.WriteLine(42.0 / 0);
-           Console.WriteLine(42 / zero);
-        }
-        catch (DivideByZeroException)
-        {
-           Console.WriteLine(“DivideByZeroException”);
-    }`,
+        try{
+            Console.WriteLine(42 / 0.0);
+            Console.WriteLine(42.0 / 0);
+            Console.WriteLine(42 / zero);
+        }catch (DivideByZeroException){
+            Console.WriteLine(“DivideByZeroException”);
+        }`,
     answers: [
       {
         text: `Infinity

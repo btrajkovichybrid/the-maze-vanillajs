@@ -1,3 +1,7 @@
+// Get quiz container
+// const quizContainer = document.getElementById("quiz-container");
+import { startQuiz } from "./quiz.js";
+
 let levels = [];
 levels[0] = {
   map: [
@@ -22,6 +26,7 @@ levels[0] = {
     x: 11,
     y: 0,
   },
+
   theme: "default",
 };
 
@@ -53,7 +58,6 @@ Game.prototype.populateMap = function () {
 };
 
 Game.prototype.createEl = function (x, y, type) {
-  //   debugger;
   let el = document.createElement("div");
   el.className = type;
   //   Set the width and height of our tile or sprite element
@@ -188,7 +192,9 @@ Game.prototype.checkGoal = function (instrux_msg, goal_msg) {
   let txt = this.el.querySelector(".text");
   if (this.player.y == this.goal.y && this.player.x == this.goal.x) {
     // add success class to the body
+    startQuiz();
     body.className = "success";
+    // debugger;
   } else {
     // remove success class from body
     body.className = "";
