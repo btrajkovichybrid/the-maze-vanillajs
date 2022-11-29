@@ -138,19 +138,6 @@ const questions = [
     ],
   },
   {
-    question: "Koja od ponuđenih tvrdnji NIJE istinita u Spring Boot-u?",
-    answers: [
-      {
-        text: "Dependency Injection se može postignuti korišćenjem @Configuration anotacije",
-        correct: true,
-      },
-      {
-        text: "Dependency Injection se može postignuti korišćenjem @Autowired anotacije",
-        correct: false,
-      },
-    ],
-  },
-  {
     question: `Koji je rezultat sledeće funkcije?
         (function() {
             console.log(1);

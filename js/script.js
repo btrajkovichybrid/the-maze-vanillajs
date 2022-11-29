@@ -53,7 +53,7 @@ levels[0] = {
 
 function Game(id, level) {
   this.el = document.getElementById(id);
-  this.tileTypes = ["Floor", "wall"];
+  this.tileTypes = ["floor", "wall"];
   //   tile dimensions in pixels
   this.tileDim = 52;
   this.map = level.map;
@@ -134,7 +134,6 @@ Game.prototype.movePlayer = function (event) {
 };
 
 Game.prototype.keyboardListener = function () {
-  console.log("firstdsadsds");
   document.addEventListener("keydown", (event) => {
     this.movePlayer(event);
     this.checkGoal();
@@ -199,13 +198,11 @@ Game.prototype.moveRight = function (sprite) {
 
 // Vertical update
 Game.prototype.updateVert = function () {
-  console.log(this.player, "PLAYER VER");
   this.player.el.style.top = this.player.y * this.tileDim + "px";
 };
 
 // horizontal update
 Game.prototype.updateHoriz = function (sprite) {
-  console.log(this.player, "PLAYER HOR");
   this.player.el.style.left = this.player.x * this.tileDim + "px";
 };
 
