@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="./assets/images/icon.png" sizes="192x192" />
     <title>Hybrid Maze Game</title>
-    <!-- <script src="js/script.js"></script> -->
+
+    <script src="js/script.js" type="module"></script>
+    <script defer src="js/quiz.js" type="module"></script>
 </head>
 
 <body>
@@ -38,8 +40,26 @@
             <div id="right"></div>
         </div>
     </div>
-    <script src="js/script.js" type="module"></script>
 
+    <!-- Quiz -->
+    <div class="container">
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+    </div>
+
+
+ 
 </body>
 
 </html>
