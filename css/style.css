@@ -31,8 +31,15 @@ body.success {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
 .game-container {
-  margin: 50px auto;
+  margin: 40px auto;
 }
 
 #map-and-controls {
@@ -129,7 +136,7 @@ body.wrong {
   visibility: hidden;
 }
 
-#question{
+#question {
   margin: 10px auto 25px;
 }
 
@@ -163,7 +170,8 @@ body.wrong {
   --hue: var(--hue-wrong);
 }
 
-.start-btn, .next-btn {
+.start-btn,
+.next-btn {
   font-size: 1.5rem;
   font-weight: bold;
   padding: 10px 20px;
@@ -179,6 +187,6 @@ body.wrong {
   display: none;
 }
 
-.show{
+.show {
   visibility: visible;
 }

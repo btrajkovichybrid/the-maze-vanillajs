@@ -26,7 +26,28 @@ levels[0] = {
     x: 11,
     y: 0,
   },
-
+  goals: [
+    {
+      x: 11,
+      y: 3,
+    },
+    {
+      x: 9,
+      y: 3,
+    },
+    {
+      x: 2,
+      y: 4,
+    },
+    {
+      x: 5,
+      y: 7,
+    },
+    {
+      x: 11,
+      y: 0,
+    },
+  ],
   theme: "default",
 };
 
@@ -38,6 +59,7 @@ function Game(id, level) {
   this.map = level.map;
   this.theme = level.theme;
   this.player = { ...level.player };
+  this.goals = [...level.goals];
   this.goal = { ...level.goal };
   this.player.el = null;
 }
