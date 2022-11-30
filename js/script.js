@@ -209,14 +209,18 @@ Game.prototype.updateHoriz = function (sprite) {
 Game.prototype.checkGoal = function (instrux_msg, goal_msg) {
   let body = document.querySelector("body");
   let txt = this.el.querySelector(".text");
+  let quizContainer = document.getElementById("quiz-container");
+  console.log(quizContainer);
   if (this.player.y == this.goal.y && this.player.x == this.goal.x) {
     // add success class to the body
     startQuiz();
     body.className = "success";
-    // debugger;
+    quizContainer.classList.remove("hide");
   } else {
     // remove success class from body
     body.className = "";
+    // quizContainer.classList.add("hide");
+    quizContainer.classList.remove("show");
   }
 };
 

@@ -121,6 +121,18 @@ body.wrong {
   --hue: var(--hue-wrong);
 }
 
+.instructions{
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 20px;
+}
+
+.instructions p{
+  font-size: 24px;
+}
+
+
 /* Quiz style */
 .container {
   width: 800px;
