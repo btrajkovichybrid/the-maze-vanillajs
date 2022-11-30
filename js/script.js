@@ -23,7 +23,7 @@ levels[0] = {
     y: 11,
   },
   goal: {
-    x: 11,
+    x: 8,
     y: 0,
   },
   goals: [

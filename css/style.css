@@ -190,6 +190,7 @@ body.wrong {
   font-size: 1.5rem;
   font-weight: bold;
   padding: 10px 20px;
+  /* visibility: hidden; */
 }
 
 .controls {
@@ -199,7 +200,7 @@ body.wrong {
 }
 
 .hide {
-  visibility: none;
+  visibility: hidden;
 }
 
 .show {

@@ -19,9 +19,8 @@ export function startQuiz() {
 }
 
 export function startGame() {
-  // startButton.classList.add("hide");
   questionContainerElement.classList.remove("hide");
-  shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+  shuffledQuestions = questions.sort(() => Math.random() - 0.5).slice(0, 5);
   currentQuestionIndex = 0;
   questionContainerElement.classList.remove("hide");
   setNextQuestion();
@@ -33,7 +32,6 @@ function setNextQuestion() {
 }
 
 function showQuestion(question) {
-  // debugger;
   questionElement.innerText = question.question;
   question.answers.forEach((answer) => {
     const button = document.createElement("button");
