@@ -52,7 +52,6 @@ levels[0] = {
 
 function init() {
   let maze = new Maze("game-container-1", levels[0], startQuiz);
-  console.log(maze, "da vidimo sta se desaa");
   maze.populateMap();
   maze.sizeUp();
   maze.placeSprite("goal");

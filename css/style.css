@@ -1,9 +1,11 @@
+@import 'quiz.css';
+
 :root {
   --player-color: red;
   --goal-color: brown;
   --floor-color: lightgrey;
   --wall-color: #2a3468;
-  --tiles-color: #B2B2B2;
+  --tiles-color: #b2b2b2;
   /* quiz vars */
   --hue-neutral: 200;
   --hue-wrong: 0;
@@ -121,88 +123,13 @@ body.wrong {
   --hue: var(--hue-wrong);
 }
 
-.instructions{
+.instructions {
   display: flex;
   justify-content: center;
   margin: 10px auto;
   padding: 20px;
 }
 
-.instructions p{
+.instructions p {
   font-size: 24px;
-}
-
-
-/* Quiz style */
-.container {
-  width: 800px;
-  max-width: 80%;
-  background-color: white;
-  border-radius: 5px;
-  padding: 10px;
-  /* box-shadow: 0 0 10px 2px; */
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  visibility: hidden;
-}
-
-#question {
-  margin: 10px auto 25px;
-}
-
-.btn-grid {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 10px;
-  margin: 20px 0;
-}
-
-.btn {
-  /* --hue: var(--hue-neutral); */
-  border: 1px solid #01befe;
-  background-color: #01befe;
-  border-radius: 5px;
-  padding: 5px 10px;
-  color: #EFF5F5;
-  outline: none;
-}
-
-.btn:hover {
-  border-color:var(--wall-color);
-}
-
-.btn.correct {
-  background-color: #4caf50;
-  /* color: black; */
-}
-
-.btn.wrong {
-  background-color: #ef5350;
-
-}
-
-.start-btn,
-.next-btn {
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 10px 20px;
-  /* visibility: hidden; */
-}
-
-.controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hide {
-  visibility: hidden;
-}
-
-.show {
-  visibility: visible;
 }
