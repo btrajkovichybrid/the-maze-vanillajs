@@ -155,15 +155,14 @@ export default class Maze {
   checkGoal() {
     let body = document.querySelector("body");
     let txt = this.el.querySelector(".text");
-    let quizContainer = document.getElementById("quiz-container");
+    let overlay = document.getElementById("overlay");
     if (this.player.y == this.goal.y && this.player.x == this.goal.x) {
       // add success class to the body
       this.initQuiz();
-      body.className = "success";
-      quizContainer.classList.remove("hide");
     } else {
       // remove success class from body
       body.className = "";
+      overlay.style.display = "none";
       // quizContainer.classList.add("hide");
       quizContainer.classList.remove("show");
     }

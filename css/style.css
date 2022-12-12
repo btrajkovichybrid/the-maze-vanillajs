@@ -1,10 +1,10 @@
-@import 'quiz.css';
+@import "quiz.css";
 
 :root {
-  --player-color: red;
-  --goal-color: brown;
+  --player-color: #c9eb30;
+  --goal-color: #ca4e3d;
   --floor-color: lightgrey;
-  --wall-color: #2a3468;
+  --wall-color: #262622;
   --tiles-color: #b2b2b2;
   /* quiz vars */
   --hue-neutral: 200;
@@ -20,8 +20,7 @@
 }
 
 body {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Roboto", sans-serif;
   transition: 0.2s ease;
   text-align: center;
   position: relative;
@@ -39,6 +38,14 @@ header {
   justify-content: center;
   align-items: center;
   height: 150px;
+}
+
+header div {
+  height: 100%;
+}
+
+header img {
+  height: 100%;
 }
 
 .game-container {
@@ -87,11 +94,11 @@ div.layer div {
 }
 
 .player {
-  border-bottom: 52px solid #01befe;
+  border-bottom: 52px solid var(--player-color);
 }
 
 .goal {
-  border-top: 52px solid #ff4f00;
+  border-top: 52px solid var(--goal-color);
 }
 
 /* animation for smooth movement */

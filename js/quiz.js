@@ -4,6 +4,7 @@ const questionContainerElement = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
 const quizContainer = document.getElementById("quiz-container");
+const overlay = document.getElementById("overlay");
 
 let shuffledQuestions, currentQuestionIndex;
 
@@ -14,15 +15,14 @@ nextButton.addEventListener("click", () => {
 });
 
 export function startQuiz() {
-  quizContainer.classList.add("show");
+  overlay.style.display = "flex";
   startGame();
 }
 
 export function startGame() {
-  questionContainerElement.classList.remove("hide");
   shuffledQuestions = questions.sort(() => Math.random() - 0.5).slice(0, 5);
   currentQuestionIndex = 0;
-  questionContainerElement.classList.remove("hide");
+  // questionContainerElement.classList.remove("hide");
   setNextQuestion();
 }
 
