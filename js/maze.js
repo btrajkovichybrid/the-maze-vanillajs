@@ -7,9 +7,10 @@ export default class Maze {
     this.map = level.map;
     this.theme = level.theme;
     this.player = { ...level.player };
-    this.goal = { ...level.goal };
+    this.goals = [...level.goals];
     this.player.el = null;
     this.initQuiz = initQuiz;
+    this.overlay = document.getElementById("overlay");
   }
 
   populateMap() {
@@ -27,6 +28,12 @@ export default class Maze {
     }
   }
 
+  sizeUp() {
+    let map = this.el.querySelector(".game-map");
+    map.style.height = this.map.length * this.tileDim + "px";
+    map.style.width = this.map[0].length * this.tileDim + "px";
+  }
+
   createElement(x, y, type) {
     let el = document.createElement("div");
     el.className = type;
@@ -38,20 +45,26 @@ export default class Maze {
     return el;
   }
 
-  sizeUp() {
-    let map = this.el.querySelector(".game-map");
-    map.style.height = this.map.length * this.tileDim + "px";
-    map.style.width = this.map[0].length * this.tileDim + "px";
+  placeSprite(type) {
+    let layer = this.el.querySelector("#sprites");
+
+    this[type]?.map((el, index) => {
+      let x = el.x;
+      let y = el.y;
+      let sprite = this.createElement(x, y, type);
+      sprite.id = `${type}__${index}`;
+      layer.appendChild(sprite);
+    });
   }
 
-  placeSprite(type) {
+  placePlayer(type) {
     let x = this[type].x;
     let y = this[type].y;
     let sprite = this.createElement(x, y, type);
     sprite.id = type;
-    // sprite.style.borderRadius = this.tileDim + "px";
     let layer = this.el.querySelector("#sprites");
     layer.appendChild(sprite);
+
     return sprite;
   }
 
@@ -153,18 +166,14 @@ export default class Maze {
   }
 
   checkGoal() {
-    let body = document.querySelector("body");
-    let txt = this.el.querySelector(".text");
-    let overlay = document.getElementById("overlay");
-    if (this.player.y == this.goal.y && this.player.x == this.goal.x) {
-      // add success class to the body
+    let foundCoordinates = this.goals.some(
+      (goal) => this.player.y == goal.y && this.player.x == goal.x
+    );
+
+    if (foundCoordinates) {
       this.initQuiz();
     } else {
-      // remove success class from body
-      body.className = "";
-      overlay.style.display = "none";
-      // quizContainer.classList.add("hide");
-      quizContainer.classList.remove("show");
+      this.overlay.style.display = "none";
     }
   }
 }

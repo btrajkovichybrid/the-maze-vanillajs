@@ -21,26 +21,22 @@ levels[0] = {
     x: 0,
     y: 11,
   },
-  goal: {
-    x: 0,
-    y: 8,
-  },
   goals: [
     {
-      x: 11,
-      y: 3,
-    },
-    {
-      x: 9,
-      y: 3,
-    },
-    {
-      x: 2,
+      x: 0,
       y: 4,
     },
     {
-      x: 5,
-      y: 7,
+      x: 0,
+      y: 10,
+    },
+    {
+      x: 4,
+      y: 2,
+    },
+    {
+      x: 7,
+      y: 5,
     },
     {
       x: 11,
@@ -54,9 +50,10 @@ function init() {
   let maze = new Maze("game-container-1", levels[0], startQuiz);
   maze.populateMap();
   maze.sizeUp();
-  maze.placeSprite("goal");
+  maze.placeSprite("goals");
 
-  let playerSprite = maze.placeSprite("player");
+  let playerSprite = maze.placePlayer("player");
+  // debugger;
   maze.player.el = playerSprite;
 
   maze.keyboardListener();
