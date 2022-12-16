@@ -46,17 +46,4 @@ levels[0] = {
   theme: "default",
 };
 
-function init() {
-  let maze = new Maze("game-container-1", levels[0], startQuiz);
-  maze.populateMap();
-  maze.sizeUp();
-  maze.placeSprite("goals");
-
-  let playerSprite = maze.placePlayer("player");
-  // debugger;
-  maze.player.el = playerSprite;
-
-  maze.keyboardListener();
-}
-
-init();
+new Maze("game-container-1", levels[0], startQuiz);

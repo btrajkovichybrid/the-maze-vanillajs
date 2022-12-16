@@ -11,6 +11,7 @@ export default class Maze {
     this.player.el = null;
     this.initQuiz = initQuiz;
     this.overlay = document.getElementById("overlay");
+    this.initMaze();
   }
 
   populateMap() {
@@ -175,5 +176,15 @@ export default class Maze {
     } else {
       this.overlay.style.display = "none";
     }
+  }
+
+  initMaze() {
+    this.populateMap();
+    this.sizeUp();
+    this.placeSprite("goals");
+
+    let playerSprite = this.placePlayer("player");
+    this.player.el = playerSprite;
+    this.keyboardListener();
   }
 }
