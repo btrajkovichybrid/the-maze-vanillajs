@@ -8,7 +8,6 @@ const overlay = document.getElementById("overlay");
 
 let shuffledQuestions, currentQuestionIndex;
 
-// startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
@@ -22,7 +21,6 @@ export function startQuiz() {
 export function startGame() {
   shuffledQuestions = questions.sort(() => Math.random() - 0.5).slice(0, 5);
   currentQuestionIndex = 0;
-  // questionContainerElement.classList.remove("hide");
   setNextQuestion();
 }
 

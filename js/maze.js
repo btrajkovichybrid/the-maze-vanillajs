@@ -12,6 +12,7 @@ export default class Maze {
     this.initQuiz = initQuiz;
     this.overlay = document.getElementById("overlay");
     this.initMaze();
+    this.isQuizOpen = false;
   }
 
   populateMap() {
@@ -48,8 +49,7 @@ export default class Maze {
 
   placeSprite(type) {
     let layer = this.el.querySelector("#sprites");
-
-    this[type]?.map((el, index) => {
+    return this[type]?.map((el, index) => {
       let x = el.x;
       let y = el.y;
       let sprite = this.createElement(x, y, type);
@@ -70,8 +70,6 @@ export default class Maze {
   }
 
   movePlayer(event) {
-    event.preventDefault();
-
     if (event.keyCode < 37 || event.keyCode > 40) {
       return;
     }
@@ -97,8 +95,17 @@ export default class Maze {
 
   keyboardListener() {
     document.addEventListener("keydown", (event) => {
-      this.movePlayer(event);
-      this.checkGoal();
+      if (this.isQuizOpen) {
+        if (event.keyCode >= 37 && event.keyCode <= 40) {
+          this.movePlayer(event);
+          this.checkGoal();
+        } else {
+          return;
+        }
+      } else {
+        this.movePlayer(event);
+        this.checkGoal();
+      }
     });
   }
 
@@ -172,8 +179,10 @@ export default class Maze {
     );
 
     if (foundCoordinates) {
+      this.isQuizOpen = true;
       this.initQuiz();
     } else {
+      this.isQuizOpen = false;
       this.overlay.style.display = "none";
     }
   }
