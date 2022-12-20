@@ -6,7 +6,7 @@ const answerButtonsElement = document.getElementById("answer-buttons");
 const quizContainer = document.getElementById("quiz-container");
 const overlay = document.getElementById("overlay");
 
-let shuffledQuestions, currentQuestionIndex;
+let shuffledQuestions, currentQuestionIndex, timeOutID;
 
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
@@ -14,12 +14,13 @@ nextButton.addEventListener("click", () => {
 });
 
 export function startQuiz() {
+  clearTimeout(timeOutID);
   overlay.style.display = "flex";
   startGame();
 }
 
 export function startGame() {
-  shuffledQuestions = questions.sort(() => Math.random() - 0.5).slice(0, 5);
+  shuffledQuestions = questions.sort(() => Math.random() - 0.5).slice(0, 1);
   currentQuestionIndex = 0;
   setNextQuestion();
 }
@@ -58,8 +59,11 @@ function selectAnswer(e) {
   Array.from(answerButtonsElement.children).forEach((button) => {
     setStatusClass(button, button.dataset.correct);
   });
-  if (shuffledQuestions.length > currentQuestionIndex + 1) {
-    nextButton.classList.remove("hide");
+  if (shuffledQuestions.length > currentQuestionIndex) {
+    nextButton.classList.add("hide");
+    timeOutID = setTimeout(function () {
+      overlay.style.display = "none";
+    }, 800);
   } else {
     startButton.innerText = "Restart";
     startButton.classList.remove("hide");
