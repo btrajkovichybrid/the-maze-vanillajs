@@ -11,8 +11,8 @@ export default class Maze {
     this.player.el = null;
     this.initQuiz = initQuiz;
     this.overlay = document.getElementById("overlay");
-    this.initMaze();
     this.isQuizOpen = false;
+    this.initMaze();
   }
 
   populateMap() {
@@ -70,7 +70,7 @@ export default class Maze {
   }
 
   movePlayer(event) {
-    if (event.keyCode < 37 || event.keyCode > 40) {
+    if (![37, 38, 39, 40].includes(event.keyCode)) {
       return;
     }
 
@@ -94,15 +94,11 @@ export default class Maze {
   }
 
   keyboardListener() {
+    // key codes for movement
+    let keyCodes = ["ArrowLeft", "ArrowRight", "ArrowDown", "ArrowUp"];
+
     document.addEventListener("keydown", (event) => {
-      if (this.isQuizOpen) {
-        if (event.keyCode >= 37 && event.keyCode <= 40) {
-          this.movePlayer(event);
-          this.checkGoal();
-        } else {
-          return;
-        }
-      } else {
+      if (keyCodes.includes(event.code)) {
         this.movePlayer(event);
         this.checkGoal();
       }
@@ -141,7 +137,6 @@ export default class Maze {
     if (this.player.x == 0) {
       return;
     }
-
     let nextTile = this.map[this.player.y][this.player.x - 1];
     if (nextTile == 1) {
       return;
@@ -177,7 +172,6 @@ export default class Maze {
     let foundCoordinates = this.goals.some(
       (goal) => this.player.y == goal.y && this.player.x == goal.x
     );
-
     if (foundCoordinates) {
       this.isQuizOpen = true;
       this.initQuiz();

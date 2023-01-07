@@ -16,7 +16,7 @@
 * {
   padding: 0;
   margin: 0;
-  font-size: 20px;
+  font-size: 1rem;
   box-sizing: border-box;
 }
 
@@ -117,4 +117,114 @@ body.wrong {
 
 .instructions p {
   font-size: 24px;
+}
+
+.form-container {
+  width: 100%;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.form-wrapper {
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.background-image {
+  background-image: url("/assets/images/valcon-building.jpeg");
+  width: 70%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.form {
+  width: 30%;
+  min-height: 100vh;
+  display: block;
+  padding: 190px 50px 50px;
+}
+
+.title {
+  width: 100%;
+  display: block;
+  font-size: 30px;
+  color: #666;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 48px;
+}
+
+.input-wrapper {
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: flex;
+  margin: 0;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+}
+
+.label-input {
+  color: #666;
+  line-height: 1.2;
+  text-transform: uppercase;
+  padding: 15px 0 2px 24px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  height: 48px;
+  background: 0 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 19px;
+  color: #404b46;
+  line-height: 1.2;
+  padding: 0 26px;
+  outline: none;
+  border: none;
+  position: relative;
+}
+
+input:focus {
+  border-bottom: 2px solid #262622;
+  border-radius: 10px;
+}
+
+.form-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background: #262622;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all .4s;
+}
+
+.form-btn:focus{
+  outline: none;
 }

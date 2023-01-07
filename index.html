@@ -17,11 +17,12 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <div class="logo">
             <img src="assets/images/Valcon-DarkGrey-RGB-300DPI.png" alt="">
         </div>
     </header>
+
     <!-- Maze Container -->
     <div id="game-container-1" class="game-container">
         <div id="map-and-controls">
@@ -29,8 +30,6 @@
             <div id="game-map-1" class="game-map">
                 <div id="tiles" class="layer"></div>
                 <div id="sprites" class="layer"></div>
-
-                <!-- <div id="success-msg">Umesto ovoga ide pop-up sa kviz pitanjima?</div> -->
             </div>
         </div>
 
@@ -45,7 +44,6 @@
 
     <!-- Controls -->
     <div id="controls">
-        <!-- <button id="up">txt</button> -->
         <div id="horiz">
             <div id="left"></div>
             <div id="right"></div>
@@ -54,21 +52,49 @@
 
     <!-- Quiz -->
     <div id="overlay">
-         <div class="container slide-in-blurred-top" id="quiz-container">
-        <div id="question-container">
-            <div id="question">Question</div>
-            <div id="answer-buttons" class="btn-grid">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
+        <div class="container slide-in-blurred-top" id="quiz-container">
+            <div id="question-container">
+                <div id="question">Question</div>
+                <div id="answer-buttons" class="btn-grid">
+                    <button class="btn">Answer 1</button>
+                    <button class="btn">Answer 2</button>
+                </div>
+            </div>
+            <div class="controls">
+                <!-- <button id="start-btn" class="start-btn btn">Start</button> -->
+                <button id="next-btn" class="next-btn btn hide">Next</button>
             </div>
         </div>
-        <div class="controls">
-            <!-- <button id="start-btn" class="start-btn btn">Start</button> -->
-            <button id="next-btn" class="next-btn btn hide">Next</button>
+    </div>
+
+    <!-- Form -->
+    <div class="form-container">
+        <div class="form-wrapper">
+            <div class="background-image">
+            </div>
+            <div class="form">
+                <span class="title">Hello you, please fill the form and play the game</span>
+                <form id="onboarding-form">
+                    <div class="input-wrapper">
+                        <label for="name" class="label-input">Full name</label>
+                        <input type="text" id="name" name="fullName" placeholder="Enter your name...">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="email" class="label-input">Email address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email...">
+                    </div>
+                    <div class="input-wrapper ">
+                        <button class="form-btn">Send</button>
+                    </div>
+                </form>
+
+            </div>
         </div>
+
+
+
     </div>
-    </div>
-   
+
 
 
 
