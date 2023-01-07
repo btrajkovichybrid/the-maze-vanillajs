@@ -142,7 +142,7 @@ body.wrong {
 }
 
 .background-image {
-  background-image: url("/assets/images/valcon-building.jpeg");
+  background-image: url("../assets/images/valcon-building.jpeg");
   width: 70%;
   background-repeat: no-repeat;
   background-size: cover;
