@@ -119,7 +119,7 @@ body.wrong {
   font-size: 24px;
 }
 
-.form-container {
+.onboarding-form {
   width: 100%;
   min-height: 100vh;
   flex-wrap: wrap;
@@ -149,7 +149,7 @@ body.wrong {
   background-position: center;
 }
 
-.form {
+.form-container {
   width: 30%;
   min-height: 100vh;
   display: block;
@@ -166,45 +166,74 @@ body.wrong {
   padding-bottom: 48px;
 }
 
-.input-wrapper {
-  width: 100%;
-  border: 1px solid #e6e6e6;
-  border-radius: 10px;
-  margin-bottom: 20px;
+.form-control {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
+  text-align:initial;
 }
 
-label {
-  display: flex;
-  margin: 0;
-  font-size: 12px;
-  font-family: "Roboto", sans-serif;
-}
 
-.label-input {
-  color: #666;
-  line-height: 1.2;
+.form-control label {
+	display: inline-block;
+	margin-bottom: 5px;
   text-transform: uppercase;
-  padding: 15px 0 2px 24px;
+  font-weight: 400;
+  font-size: 13px;
 }
 
-input {
-  display: block;
-  width: 100%;
-  height: 48px;
-  background: 0 0;
+
+.form-control input {
+	border: 2px solid #424242;
+	border-radius: 4px;
+	display: flex;
   font-family: "Roboto", sans-serif;
-  font-size: 19px;
-  color: #404b46;
-  line-height: 1.2;
-  padding: 0 26px;
-  outline: none;
-  border: none;
-  position: relative;
+	font-size: 16px;
+	padding: 12px;
+	width: 100%;
 }
 
-input:focus {
-  border-bottom: 2px solid #262622;
-  border-radius: 10px;
+.form-control input:focus {
+	outline: 0;
+	border-color: #9e9e9e;
+}
+
+
+.form-control.success input {
+	border-color: #2ecc71;
+}
+
+.form-control.error input {
+	border-color: #e74c3c;
+}
+
+.form-control i {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
+}
+
+.form-control small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.form-control.error small {
+	visibility: visible;
 }
 
 .form-btn{
@@ -214,8 +243,8 @@ input:focus {
     padding: 0 20px;
     width: 100%;
     height: 50px;
-    border-radius: 10px;
-    background: #262622;
+    border-radius: 4px;
+    background: #424242;
     font-family: "Roboto", sans-serif;
     font-size: 18px;
     color: #fff;
@@ -225,6 +254,7 @@ input:focus {
     transition: all .4s;
 }
 
-.form-btn:focus{
+.form-btn:hover{
   outline: none;
+  cursor: pointer;
 }

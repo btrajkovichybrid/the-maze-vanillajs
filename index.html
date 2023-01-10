@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="./assets/images/valcon-favicon.ico" sizes="192x192" />
     <title>Valcon Maze Game</title>
 
+    <script src="https://kit.fontawesome.com/1fea2bc2bc.js" crossorigin="anonymous"></script>
     <script src="js/script.js" type="module"></script>
     <script defer src="js/quiz.js" type="module"></script>
 </head>
@@ -68,22 +70,28 @@
     </div>
 
     <!-- Form -->
-    <div class="form-container">
+    <div class="onboarding-form">
         <div class="form-wrapper">
             <div class="background-image">
             </div>
-            <div class="form">
+            <div class="form-container">
                 <span class="title">Hello you, please fill the form and play the game</span>
-                <form id="onboarding-form">
-                    <div class="input-wrapper">
+                <form id="form">
+                    <div class="form-control">
                         <label for="name" class="label-input">Full name</label>
-                        <input type="text" id="name" name="fullName" placeholder="Enter your name...">
+                        <input type="text" id="username" name="fullName" placeholder="Enter your name...">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
                     </div>
-                    <div class="input-wrapper">
+                    <div class="form-control">
                         <label for="email" class="label-input">Email address</label>
                         <input type="email" id="email" name="email" placeholder="Enter your email...">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
                     </div>
-                    <div class="input-wrapper ">
+                    <div class="form-control ">
                         <button class="form-btn">Send</button>
                     </div>
                 </form>
